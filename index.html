@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>防災力向上プロジェクト｜四国アイランドリーグplus</title>
+<meta name="description" content="四国アイランドリーグplus 防災力向上プロジェクト。スポーツの力で地域と大切な人を守る、防災パートナーを募集しています。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700;800&family=BIZ+UDPGothic:wght@400;700&display=swap">
+<style>
+/* Layout: 企画書のブランド（紺＋オレンジの帯、空色の丸ゴシック）をそのまま継承。1カラムで流れ、要所だけ段組み。 */
+:root {
+  --bg: #F4F7FB;
+  --surface: #FFFFFF;
+  --ink: #13233F;
+  --muted: #56647A;
+  --line: #D8E0EB;
+  --navy: #0F2E5C;
+  --blue: #1D4F9C;
+  --sky: #3F9FDB;
+  --orange: #EE5A24;
+  --on-dark: #FFFFFF;
+  --f-display: "M PLUS Rounded 1c", "Hiragino Maru Gothic ProN", "Hiragino Sans", sans-serif;
+  --f-body: "BIZ UDPGothic", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0C1626; --surface: #13223A; --ink: #E8EEF7; --muted: #A3B1C6; --line: #243652;
+    --navy: #0A1F40; --blue: #5B8FE0; --sky: #6BBBEB; --orange: #FF7440; --on-dark: #FFFFFF;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 16px; line-height: 1.85;
+}
+.wrap { max-width: 1080px; margin-inline: auto; padding-inline: 20px; }
+h1, h2, h3 { font-family: var(--f-display); font-weight: 800; line-height: 1.35; margin: 0; text-wrap: balance; word-break: keep-all; overflow-wrap: anywhere; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.eyebrow { font-family: var(--f-display); font-weight: 700; font-size: 14px; letter-spacing: .08em; color: var(--orange); }
+.hl { color: var(--orange); font-weight: 700; }
+
+/* 企画書の見出し下の帯：短いオレンジ＋長い紺 */
+.rule { display: flex; height: 5px; margin-top: 14px; }
+.rule::before { content: ""; width: 72px; background: var(--orange); }
+.rule::after { content: ""; flex: 1; background: var(--blue); }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font: 700 16px/1 var(--f-body); text-decoration: none; cursor: pointer;
+  padding: 17px 26px; border-radius: 999px; border: 2px solid var(--blue); color: var(--blue); background: transparent;
+}
+.btn-main { background: var(--orange); border-color: var(--orange); color: #fff; }
+.btn:hover { transform: translateY(-1px); }
+
+/* Header */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding-block: 12px; }
+.logo { text-decoration: none; line-height: 1.2; }
+.logo small { display: block; font: 700 11px var(--f-display); color: var(--blue); letter-spacing: .04em; }
+.logo b { font: 800 20px var(--f-display); color: var(--sky); -webkit-text-stroke: .6px var(--blue); }
+.nav { display: flex; gap: 22px; align-items: center; font-size: 14px; font-weight: 700; }
+.nav a { text-decoration: none; }
+.nav .btn { padding: 11px 18px; font-size: 14px; white-space: nowrap; }
+
+/* Hero */
+.hero { padding-block: 64px 72px; }
+.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+.hero-logo { line-height: 0; }
+.hero-logo img { display: block; width: min(100%, 540px); height: auto; }
+.hero .catch { margin-top: 22px; font: 800 clamp(20px, 2.6vw, 26px)/1.5 var(--f-display); }
+.hero .lead { margin-top: 16px; color: var(--muted); max-width: 34em; }
+.hero-cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
+.facts { display: grid; gap: 14px; min-width: 0; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; display: grid; grid-template-columns: auto 1fr; gap: 4px 18px; align-items: center; }
+.fact .v { grid-row: span 2; font: 800 44px/1 var(--f-display); color: var(--blue); min-width: 2.4em; text-align: center; }
+.fact .v small { font-size: 16px; margin-left: 2px; }
+.fact .k { font-weight: 700; }
+.fact .s { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+section.block { padding-block: 80px; }
+section.alt { background: var(--surface); }
+.head { max-width: 44em; margin-bottom: 44px; }
+.head h2 { font-size: clamp(28px, 4vw, 40px); color: var(--blue); }
+.head p { margin-top: 18px; color: var(--muted); }
+
+/* Background */
+.bg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.bg-card { border-radius: 14px; padding: 28px; background: var(--bg); min-width: 0; }
+.bg-card h3 { font-size: 22px; margin-bottom: 12px; }
+.bg-card .tag { display: inline-block; font: 700 12px var(--f-body); color: #fff; background: var(--blue); border-radius: 4px; padding: 2px 10px; margin-bottom: 10px; }
+.bg-card.lesson .tag { background: var(--orange); }
+.quote { margin-top: 36px; font: 800 clamp(18px, 2.4vw, 22px)/1.6 var(--f-display); color: var(--blue); border-left: 5px solid var(--orange); padding-left: 18px; }
+
+/* Purposes */
+.purposes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.purpose { background: var(--surface); border-radius: 14px; padding: 26px; border-top: 5px solid var(--blue); min-width: 0; }
+.purpose:nth-child(3) { border-top-color: var(--orange); }
+.purpose h3 { font-size: 20px; margin-bottom: 10px; }
+.purpose p { color: var(--muted); font-size: 15px; }
+
+/* Network */
+.net { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.teams { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.team { background: var(--bg); border-radius: 12px; padding: 16px 18px; min-width: 0; }
+.team .pref { font: 800 13px var(--f-display); color: var(--orange); }
+.team .name { font-weight: 700; line-height: 1.5; }
+.goal { border: 2px solid var(--orange); border-radius: 14px; padding: 26px; min-width: 0; }
+.goal h3 { font-size: 22px; color: var(--orange); }
+.goal p { margin-top: 10px; color: var(--muted); }
+.values { margin-top: 18px; display: grid; gap: 10px; }
+.value { display: flex; gap: 14px; align-items: center; font-weight: 700; }
+.value span { flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--orange); color: #fff; display: grid; place-items: center; font: 800 16px var(--f-display); }
+.hub { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+.hub span { font-size: 13px; font-weight: 700; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
+
+/* Pillars */
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.pillar { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+.pillar-head { background: var(--blue); color: var(--on-dark); padding: 14px 22px; font: 800 14px var(--f-display); letter-spacing: .06em; }
+.pillar-body { padding: 22px; display: grid; gap: 12px; align-content: start; }
+.pillar h3 { font-size: 22px; }
+.pillar p { font-size: 15px; }
+.proof { margin-top: 6px; background: var(--bg); border-radius: 10px; padding: 14px 16px; font-size: 14px; }
+.proof b { display: block; font-size: 12px; color: var(--muted); }
+.proof .num { font: 800 32px/1.2 var(--f-display); color: var(--orange); }
+
+/* Five steps (実際の学習の順序) */
+.five { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; padding: 0; margin: 0 0 44px; }
+.five li { list-style: none; text-align: center; display: grid; gap: 10px; justify-items: center; align-content: start; min-width: 0; }
+.five .c { width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; font: 800 20px var(--f-display); color: #fff; background: var(--navy); }
+.five li:nth-child(3) .c, .five li:nth-child(4) .c { background: var(--blue); }
+.five li:nth-child(5) .c { background: var(--orange); }
+.five p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.progs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.prog { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; min-width: 0; }
+.prog-head { background: var(--navy); color: #fff; text-align: center; padding: 14px; }
+.prog:nth-child(2) .prog-head { background: var(--blue); }
+.prog:nth-child(3) .prog-head { background: var(--orange); }
+.prog-head h3 { font-size: 20px; }
+.prog-head p { font-size: 13px; opacity: .9; }
+.prog ul { margin: 0; padding: 20px 22px 22px 40px; font-weight: 700; }
+.prog .etc { padding: 0 22px 20px; margin-top: -12px; font-size: 14px; color: var(--muted); }
+
+/* Partner tiers */
+.tiers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.tier { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px 20px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+.tier .rank { font: 800 16px var(--f-display); }
+.tier .price { font: 800 clamp(30px, 3.4vw, 38px)/1.1 var(--f-display); color: var(--blue); font-variant-numeric: tabular-nums; }
+.tier .price small { font-size: 16px; margin-left: 2px; }
+.tier .signs { font-size: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+.tier .signs b { font: 800 22px var(--f-display); color: var(--orange); }
+.tier.top-tier { border: 2px solid var(--orange); }
+.tier.top-tier .rank::after { content: "ネーミングライツ付き"; display: block; font: 700 11px var(--f-body); color: var(--orange); }
+.common { margin-top: 24px; background: var(--surface); border-radius: 14px; padding: 24px 26px; display: grid; grid-template-columns: auto 1fr; gap: 12px 28px; align-items: start; }
+.common h3 { font-size: 18px; color: var(--blue); }
+.common ul { margin: 0; padding-left: 1.2em; }
+.note { margin-top: 14px; font-size: 13px; color: var(--muted); }
+
+/* Message + contact */
+.msg { background: var(--navy); color: var(--on-dark); text-align: center; padding-block: 80px; }
+.msg .en { font: 800 clamp(30px, 5.6vw, 58px)/1.1 var(--f-display); color: var(--sky); letter-spacing: .02em; }
+.msg p { margin-top: 22px; opacity: .92; }
+.msg .strong { font: 800 clamp(17px, 2.2vw, 21px)/1.7 var(--f-display); margin-top: 28px; opacity: 1; }
+.contact { margin: 44px auto 0; max-width: 620px; background: var(--surface); color: var(--ink); border-radius: 16px; padding: 30px; text-align: left; display: grid; gap: 16px; }
+.contact h3 { text-align: center; color: var(--blue); font-size: 20px; }
+.contact dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 10px 20px; }
+.contact dt { font: 700 12px var(--f-body); color: var(--blue); letter-spacing: .06em; padding-top: 3px; }
+.contact dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.contact .btn { justify-self: center; }
+
+footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: center; }
+
+@media (max-width: 900px) {
+  .hero-grid, .bg-grid, .net { grid-template-columns: 1fr; }
+  .purposes, .pillars, .progs { grid-template-columns: 1fr; }
+  .tiers { grid-template-columns: 1fr 1fr; }
+  .five { grid-template-columns: repeat(3, 1fr); row-gap: 24px; }
+  .nav a:not(.btn) { display: none; }
+}
+@media (max-width: 540px) {
+  .wrap { padding-inline: 16px; }
+  .logo b { font-size: 16px; }
+  .logo small { font-size: 10px; }
+  .hero { padding-block: 40px 56px; }
+  .teams, .tiers { grid-template-columns: 1fr; }
+  .five { grid-template-columns: repeat(2, 1fr); }
+  .five .c { width: 80px; height: 80px; font-size: 18px; }
+  .common, .contact dl { grid-template-columns: 1fr; }
+  .contact dl { gap: 2px; }
+  .contact dd { margin-bottom: 10px; }
+  section.block, .msg { padding-block: 60px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top"><small>四国アイランドリーグplus</small><b>防災力向上プロジェクト</b></a>
+    <nav class="nav" aria-label="ページ内">
+      <a href="#about">プロジェクト</a>
+      <a href="#events">防災イベント</a>
+      <a href="#partner">パートナー制度</a>
+      <a class="btn btn-main" href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 class="hero-logo"><img src="logo.png" width="1652" height="889" alt="四国アイランドリーグplus 防災力向上プロジェクト"></h1>
+        <p class="catch">スポーツの力で、<br>地域と大切な人を守る。</p>
+        <p class="lead">南海トラフ巨大地震への備えが求められる四国で、4県の球団と選手が防災の担い手になります。防災に強い街のインフラづくりを、共に進めるパートナーを募集しています。</p>
+        <div class="hero-cta">
+          <a class="btn btn-main" href="#partner">パートナー制度を見る</a>
+          <a class="btn" href="#about">プロジェクトを知る</a>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="v">4<small>県</small></div><p class="k">四国全域の球団ネットワーク</p><p class="s">愛媛・香川・高知・徳島の4球団で連携</p></div>
+        <div class="fact"><div class="v">18<small>名</small></div><p class="k">防災士を取得</p><p class="s">愛媛球団の関係者が資格を取得済み</p></div>
+        <div class="fact"><div class="v">12<small>回</small></div><p class="k">年間の防災イベント</p><p class="s">学校・自治体・球場で実施</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="about">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">背景</p>
+        <h2>南海トラフ巨大地震への<wbr>備えと地域連携</h2>
+        <div class="rule" aria-hidden="true"></div>
+      </div>
+      <div class="bg-grid">
+        <div class="bg-card">
+          <span class="tag">四国の課題</span>
+          <h3>企業にも、防災と事業継続が求められています</h3>
+          <p>南海トラフ巨大地震の発生が懸念される四国では、地域の防災だけでなく、企業の防災と事業継続（BCP）が強く求められています。</p>
+        </div>
+        <div class="bg-card lesson">
+          <span class="tag">2018年 西日本豪雨の教訓</span>
+          <h3>駆けつけたくても、すぐには動けなかった</h3>
+          <p>西日本豪雨の際、私たちは災害復興のために選手派遣を行いました。しかし被害状況の把握や安全確認に時間がかかり、迅速に対応できないという課題が残りました。</p>
+        </div>
+      </div>
+      <p class="quote">日頃から地域の皆さまに支えられている私たちが、いざという時に助け合えるように。有事の際に一刻も早く駆けつけるため、防災を通じた関係づくりを目指します。</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">プロジェクトの3つの目的</p>
+        <h2>スポーツの力で挑む、<br>地域の防災力向上と人財育成</h2>
+        <div class="rule" aria-hidden="true"></div>
+        <p>四国アイランドリーグplusは、全国から集まる若い選手の育成と、地域の賑わいづくりに取り組んできました。その基盤に「防災」という新しい価値を積み重ね、選手のセカンドキャリア形成と地域貢献を同時に実現します。</p>
+      </div>
+      <div class="purposes">
+        <div class="purpose"><h3>防災知識を備えた人財の育成</h3><p>競技生活を通じて、高い防災意識と実践的なスキルを身につけます。</p></div>
+        <div class="purpose"><h3>迅速かつ的確な地域支援</h3><p>災害時には地域に寄り添い、機動力のある支援活動を展開します。</p></div>
+        <div class="purpose"><h3>スポーツの力で人と地域を支援</h3><p>スポーツの求心力を活かし、地域全体の防災コミュニティを強くします。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">独自の強み</p>
+        <h2>四国全域をカバーする<br>広域プラットフォーム</h2>
+        <div class="rule" aria-hidden="true"></div>
+        <p>4県にわたる地域ネットワークと発信力を活かし、防災を共通言語に、球団・住民・企業・自治体の連携をつなぐハブになります。</p>
+      </div>
+      <div class="net">
+        <div>
+          <div class="teams">
+            <div class="team"><p class="pref">愛媛</p><p class="name">愛媛マンダリンパイレーツ</p></div>
+            <div class="team"><p class="pref">香川</p><p class="name">香川オリーブガイナーズ</p></div>
+            <div class="team"><p class="pref">高知</p><p class="name">高知ファイティングドッグス</p></div>
+            <div class="team"><p class="pref">徳島</p><p class="name">徳島インディゴソックス</p></div>
+          </div>
+          <div class="hub" aria-label="連携する主体">
+            <span>球団</span><span>住民</span><span>企業</span><span>自治体</span><span>スポーツ</span><span>地域課題</span>
+          </div>
+        </div>
+        <div class="goal">
+          <h3>目指す姿：防災に強い街のインフラづくり</h3>
+          <p>一過性のイベントで終わらせず、持続可能な地域社会の発展を目指します。</p>
+          <div class="values">
+            <div class="value"><span>1</span>地域全体の防災力向上</div>
+            <div class="value"><span>2</span>参画企業の事業継続（BCP）向上</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">プロジェクトの3つの柱</p>
+        <h2>街に、人に、有事に。</h2>
+        <div class="rule" aria-hidden="true"></div>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <div class="pillar-head">柱 1</div>
+          <div class="pillar-body">
+            <h3>防災に強い街つくり</h3>
+            <p>消火栓看板や電柱などに<span class="hl">避難所誘導マップ</span>を設置し、住民が日常的に避難先を確認できる環境を整えます。スポーツ×防災の啓発活動で、地域の防災力を高めます。</p>
+          </div>
+        </article>
+        <article class="pillar">
+          <div class="pillar-head">柱 2</div>
+          <div class="pillar-body">
+            <h3>防災教育</h3>
+            <p>所属選手が<span class="hl">防災士や小型重機の資格</span>を取得し、地域の防災リーダーとして活躍します。</p>
+            <div class="proof"><b>実績</b>愛媛球団関係者 <span class="num">18</span> 名が防災士を取得</div>
+          </div>
+        </article>
+        <article class="pillar">
+          <div class="pillar-head">柱 3</div>
+          <div class="pillar-body">
+            <h3>災害時の選手派遣</h3>
+            <p>有事の際には<span class="hl">いち早く現地へ選手を派遣</span>し、復旧支援活動を行います。</p>
+            <div class="proof"><b>連携体制</b>四国各県の社会福祉協議会と、災害時の協力協定を締結済み</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="events">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">防災イベント</p>
+        <h2>知る、備える、逃げる、<br>助ける、支える。</h2>
+        <div class="rule" aria-hidden="true"></div>
+        <p>学校・自治体・球場で、選手と一緒に体を動かしながら学ぶ防災イベントを開催します。5つの力を順に身につけられるよう、プログラムを組み合わせて実施します。</p>
+      </div>
+      <ol class="five">
+        <li><div class="c">知る</div><p>地域のリスクや災害の基礎知識を学ぶ</p></li>
+        <li><div class="c">備える</div><p>日頃からの備えや工夫を身につける</p></li>
+        <li><div class="c">逃げる</div><p>とっさの場面で状況を見極める力を養う</p></li>
+        <li><div class="c">助ける</div><p>自分や周りの人を助ける力を身につける</p></li>
+        <li><div class="c">支える</div><p>地域で支え合い、災害後の暮らしを支える</p></li>
+      </ol>
+      <div class="progs">
+        <div class="prog"><div class="prog-head"><h3>座学プログラム</h3><p>所要時間：50分</p></div><ul><li>危険地帯の学習</li><li>防災工作</li><li>防災クイズ</li></ul><p class="etc">など</p></div>
+        <div class="prog"><div class="prog-head"><h3>体力向上プログラム</h3><p>所要時間：50分</p></div><ul><li>防災障害物競争</li><li>水消火器体験</li><li>手繰り寄せ競争</li></ul><p class="etc">など</p></div>
+        <div class="prog"><div class="prog-head"><h3>郊外学習プログラム</h3><p>所要時間：110分</p></div><ul><li>避難所までの歩行</li><li>防災看板探し</li></ul><p class="etc">など</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="partner">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">防災パートナー制度</p>
+        <h2>地域に、防災資産を残す。</h2>
+        <div class="rule" aria-hidden="true"></div>
+        <p>協賛いただいた費用で消火栓看板を設置し、地域に残る防災資産にします。4段階のパートナー枠をご用意しています。看板の設置費は当社が負担します。</p>
+      </div>
+      <div class="tiers">
+        <div class="tier top-tier"><p class="rank">プラチナパートナー</p><p class="price">1,000<small>万円</small></p><p class="signs">消火栓看板 <b>20</b> 基設置</p></div>
+        <div class="tier"><p class="rank">ゴールドパートナー</p><p class="price">500<small>万円</small></p><p class="signs">消火栓看板 <b>10</b> 基設置</p></div>
+        <div class="tier"><p class="rank">シルバーパートナー</p><p class="price">100<small>万円</small></p><p class="signs">消火栓看板 <b>2</b> 基設置</p></div>
+        <div class="tier"><p class="rank">ブロンズパートナー</p><p class="price">50<small>万円</small></p><p class="signs">共通特典を提供</p></div>
+      </div>
+      <div class="common">
+        <h3>全パートナー<br>共通特典</h3>
+        <ul>
+          <li>年12回の防災イベント実施（学校・自治体・球場）</li>
+          <li>会場内でののぼり等の露出物掲出</li>
+          <li>WEBサイトおよび公式SNSでの企業ロゴ掲載・露出</li>
+        </ul>
+      </div>
+      <p class="note">契約期間は1年、金額は税別です。CSR活動を通じて、企業の社会的信頼とブランド価値の向上につながる枠組みです。</p>
+    </div>
+  </section>
+
+  <section class="msg" id="contact">
+    <div class="wrap">
+      <p class="en" lang="en">Let's Create a Safe Future.</p>
+      <p>いつ起こるかわからない災害や事故。<br>もし、私の大切な人が倒れた時に、救助の知識を持った人が近くにいたら。<br>もし、突然目の前で人が倒れた時に、勇気と知識を持って真っ先に救助ができたら。</p>
+      <p class="strong">「私、そして誰かの『大切な人とその笑顔』を一人でも多く守りたい」</p>
+      <p>そんな私たちの想いに賛同し、このプロジェクトを共に歩んでいただけるパートナー様をお待ちしています。</p>
+      <div class="contact">
+        <h3>お問い合わせ先</h3>
+        <dl>
+          <dt>運営</dt><dd>株式会社IBLJ 四国アイランドリーグplus運営事務局</dd>
+          <dt>住所</dt><dd>〒760-0028 香川県高松市鍛冶屋町6番地11</dd>
+          <dt>メール</dt><dd><a href="mailto:shikokuilplus@iblj.co.jp">shikokuilplus@iblj.co.jp</a></dd>
+        </dl>
+        <a class="btn btn-main" href="mailto:shikokuilplus@iblj.co.jp?subject=%E9%98%B2%E7%81%BD%E3%83%91%E3%83%BC%E3%83%88%E3%83%8A%E3%83%BC%E5%88%B6%E5%BA%A6%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6">メールで問い合わせる</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 四国アイランドリーグplus 防災力向上プロジェクト</footer>
+</body>
+</html>
