@@ -83,6 +83,9 @@ a { color: inherit; }
 .fact .v small { font-size: 16px; margin-left: 2px; }
 .fact .k { font-weight: 700; }
 .fact .s { font-size: 13px; color: var(--muted); line-height: 1.6; }
+.fact-link { text-decoration: none; color: inherit; transition: border-color .2s, box-shadow .2s, transform .2s; }
+.fact-link .arrow { margin-left: 8px; color: var(--orange); }
+.fact-link:hover { border-color: var(--orange); box-shadow: 0 4px 14px rgba(15,46,92,.12); transform: translateY(-2px); }
 
 section.block { padding-block: 80px; }
 section.alt { background: var(--surface); }
@@ -197,7 +200,7 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
   .contact dd { margin-bottom: 10px; }
   section.block, .msg { padding-block: 60px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover { transform: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover, .fact-link:hover { transform: none; } }
 </style>
 </head>
 <body>
@@ -227,7 +230,7 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
         </div>
       </div>
       <div class="facts">
-        <div class="fact"><div class="v">4<small>県</small></div><p class="k">四国全域の球団ネットワーク</p><p class="s">愛媛・香川・高知・徳島の4球団で連携</p></div>
+        <a class="fact fact-link" href="https://www.iblj.co.jp/teams/" target="_blank" rel="noopener"><div class="v">4<small>県</small></div><p class="k">四国全域の球団ネットワーク<span class="arrow" aria-hidden="true">→</span></p><p class="s">愛媛・香川・高知・徳島の4球団で連携</p></a>
         <div class="fact"><div class="v">18<small>名</small></div><p class="k">防災士を取得</p><p class="s">愛媛球団の関係者が資格を取得済み</p></div>
         <div class="fact"><div class="v">12<small>回</small></div><p class="k">年間の防災イベント</p><p class="s">学校・自治体・球場で実施</p></div>
       </div>
