@@ -178,9 +178,12 @@ section.alt { background: var(--surface); }
 .sign-terms dt { font-weight: 700; font-size: 14px; color: var(--orange); }
 .sign-terms dd { margin: 2px 0 0; font-size: 15px; }
 .sign-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: end; min-width: 0; }
-.sign-photos figure { margin: 0; }
+.sign-photos figure { margin: 0; position: relative; }
 .sign-photos img { display: block; width: 100%; height: auto; border-radius: 8px; }
-.sign-photos figcaption { margin-top: 4px; font-size: 12px; font-weight: 700; color: var(--muted); text-align: center; }
+.sign-side { position: absolute; top: 10px; left: 10px; padding: 4px 14px; border-radius: 999px; font-family: var(--f-display); font-size: 15px; font-weight: 800; color: #fff; background: var(--navy); box-shadow: 0 1px 4px rgba(0,0,0,.3); }
+.sign-side.back { background: var(--orange); }
+.sign-photos figcaption { margin-top: 6px; font-size: 13px; color: var(--muted); text-align: center; }
+.sign-photos figcaption b { color: var(--ink); }
 .sign-note { grid-column: 1 / -1; font-size: 12px; color: var(--muted); }
 .common { margin-top: 24px; background: var(--surface); border-radius: 14px; padding: 24px 26px; display: grid; grid-template-columns: auto 1fr; gap: 12px 28px; align-items: start; }
 .common h3 { font-size: 18px; color: var(--blue); }
@@ -426,8 +429,8 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
           </dl>
         </div>
         <div class="sign-photos">
-          <figure><img src="sign-front.jpg" width="1400" height="933" alt="消火栓標識の下に付けた看板の表面。パートナー企業名とリーグのロゴが入っている" loading="lazy"><figcaption>表面</figcaption></figure>
-          <figure><img src="sign-back.jpg" width="1400" height="747" alt="看板の裏面。最寄りの避難場所、震度予想、避難経路のQRコード、災害用伝言ダイヤル171が入っている" loading="lazy"><figcaption>裏面</figcaption></figure>
+          <figure><img src="sign-front.jpg" width="1400" height="747" alt="消火栓標識の下に付けた看板の表面。パートナー企業名とリーグのロゴが入っている" loading="lazy"><span class="sign-side" aria-hidden="true">表面</span><figcaption><b>表面</b>：パートナー企業名とリーグロゴ</figcaption></figure>
+          <figure><img src="sign-back.jpg" width="1400" height="747" alt="看板の裏面。最寄りの避難場所、震度予想、避難経路のQRコード、災害用伝言ダイヤル171が入っている" loading="lazy"><span class="sign-side back" aria-hidden="true">裏面</span><figcaption><b>裏面</b>：避難場所・震度予想・避難経路QR・171</figcaption></figure>
           <p class="sign-note">※画像はイメージです</p>
         </div>
       </div>
