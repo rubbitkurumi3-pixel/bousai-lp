@@ -169,6 +169,19 @@ section.alt { background: var(--surface); }
 .tier .signs b { font: 800 22px var(--f-display); color: var(--orange); }
 .tier.top-tier { border: 2px solid var(--orange); }
 .tier.top-tier .rank::after { content: "ネーミングライツ付き"; display: block; font: 700 11px var(--f-body); color: var(--orange); }
+.sign { margin-top: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 26px; display: grid; gap: 22px; }
+.sign-text { min-width: 0; max-width: 46em; }
+.sign h3 { font-size: 22px; color: var(--blue); margin-bottom: 10px; }
+.sign-text > p { font-size: 15px; }
+.sign-terms { margin: 18px 0 0; display: grid; gap: 10px; }
+.sign-terms div { border-left: 4px solid var(--orange); padding: 4px 0 4px 14px; }
+.sign-terms dt { font-weight: 700; font-size: 14px; color: var(--orange); }
+.sign-terms dd { margin: 2px 0 0; font-size: 15px; }
+.sign-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: end; min-width: 0; }
+.sign-photos figure { margin: 0; }
+.sign-photos img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.sign-photos figcaption { margin-top: 4px; font-size: 12px; font-weight: 700; color: var(--muted); text-align: center; }
+.sign-note { grid-column: 1 / -1; font-size: 12px; color: var(--muted); }
 .common { margin-top: 24px; background: var(--surface); border-radius: 14px; padding: 24px 26px; display: grid; grid-template-columns: auto 1fr; gap: 12px 28px; align-items: start; }
 .common h3 { font-size: 18px; color: var(--blue); }
 .common ul { margin: 0; padding-left: 1.2em; }
@@ -200,7 +213,8 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
   .logo b { font-size: 16px; }
   .logo small { font-size: 10px; }
   .hero { padding-block: 40px 56px; }
-  .teams, .tiers { grid-template-columns: 1fr; }
+  .teams, .tiers, .sign-photos { grid-template-columns: 1fr; }
+  .sign { padding: 20px; }
   .five { grid-template-columns: repeat(2, 1fr); }
   .five .c { width: 80px; height: 80px; font-size: 18px; }
   .common, .contact dl { grid-template-columns: 1fr; }
@@ -394,13 +408,28 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
         <p class="eyebrow">防災パートナー制度</p>
         <h2>地域に、防災資産を残す。</h2>
         <div class="rule" aria-hidden="true"></div>
-        <p>協賛いただいた費用で消火栓看板を設置し、地域に残る防災資産にします。4段階のパートナー枠をご用意しています。看板の設置費は当社が負担します。</p>
+        <p>協賛いただいた費用で消火栓看板を設置し、地域に残る防災資産にします。4段階のパートナー枠をご用意しています。初年度の看板の設置費は、四国アイランドリーグplusが負担します。</p>
       </div>
       <div class="tiers">
         <div class="tier top-tier"><p class="rank">プラチナパートナー</p><p class="price">1,000<small>万円</small></p><p class="signs">消火栓看板 <b>20</b> 基設置</p></div>
         <div class="tier"><p class="rank">ゴールドパートナー</p><p class="price">500<small>万円</small></p><p class="signs">消火栓看板 <b>10</b> 基設置</p></div>
         <div class="tier"><p class="rank">シルバーパートナー</p><p class="price">100<small>万円</small></p><p class="signs">消火栓看板 <b>2</b> 基設置</p></div>
         <div class="tier"><p class="rank">ブロンズパートナー</p><p class="price">50<small>万円</small></p><p class="signs">共通特典を提供</p></div>
+      </div>
+      <div class="sign">
+        <div class="sign-text">
+          <h3>消火栓看板について</h3>
+          <p>消火栓の標識の下に取り付ける看板です。表面にはパートナー企業名と四国アイランドリーグplusのロゴを、裏面には最寄りの避難場所、その地域の震度予想、避難経路を確認できるQRコード、災害用伝言ダイヤル171を掲載します。毎日目にする場所で、住民が避難先を確認できるようにします。</p>
+          <dl class="sign-terms">
+            <div><dt>初年度</dt><dd>看板の費用は四国アイランドリーグplusが負担します。</dd></div>
+            <div><dt>契約期間の終了後</dt><dd>防災力向上プロジェクトの継続契約がない場合、看板の掲出については、パートナー様から各県の消火栓看板設置業者へ直接ご相談いただきます。</dd></div>
+          </dl>
+        </div>
+        <div class="sign-photos">
+          <figure><img src="sign-front.jpg" width="1400" height="933" alt="消火栓標識の下に付けた看板の表面。パートナー企業名とリーグのロゴが入っている" loading="lazy"><figcaption>表面</figcaption></figure>
+          <figure><img src="sign-back.jpg" width="1400" height="747" alt="看板の裏面。最寄りの避難場所、震度予想、避難経路のQRコード、災害用伝言ダイヤル171が入っている" loading="lazy"><figcaption>裏面</figcaption></figure>
+          <p class="sign-note">※画像はイメージです</p>
+        </div>
       </div>
       <div class="common">
         <h3>全パートナー<br>共通特典</h3>
