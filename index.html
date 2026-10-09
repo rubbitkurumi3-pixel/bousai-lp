@@ -119,7 +119,10 @@ section.alt { background: var(--surface); }
 /* Network */
 .net { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
 .teams { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.team { background: var(--bg); border-radius: 12px; padding: 16px 18px; min-width: 0; }
+.team { background: var(--bg); border-radius: 12px; padding: 16px 18px; min-width: 0; display: grid; grid-template-columns: 64px 1fr; gap: 14px; align-items: center; }
+.team-logo { position: relative; display: block; aspect-ratio: 4 / 5; background: #fff; border: 1px solid var(--line); border-radius: 10px; transition: border-color .2s, transform .2s; }
+.team-logo img { position: absolute; inset: 6px; width: calc(100% - 12px); height: calc(100% - 12px); object-fit: contain; }
+.team-logo:hover { border-color: var(--orange); transform: translateY(-2px); }
 .team .pref { font: 800 13px var(--f-display); color: var(--orange); }
 .team .name { font-weight: 700; line-height: 1.5; }
 .goal { border: 2px solid var(--orange); border-radius: 14px; padding: 26px; min-width: 0; }
@@ -225,7 +228,7 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
   .contact dd { margin-bottom: 10px; }
   section.block, .msg { padding-block: 60px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover, .team-logos a:hover { transform: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover, .team-logos a:hover, .team-logo:hover { transform: none; } }
 </style>
 </head>
 <body>
@@ -250,8 +253,8 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
         <p class="catch">スポーツの力で、<br>地域と大切な人を守る。</p>
         <p class="lead">南海トラフ巨大地震への備えが求められる四国で、4県の球団と選手が防災の担い手になります。防災に強い街のインフラづくりを、共に進めるパートナーを募集しています。</p>
         <div class="hero-cta">
-          <a class="btn btn-main" href="#partner">パートナー制度を見る</a>
           <a class="btn" href="#about">プロジェクトを知る</a>
+          <a class="btn btn-main" href="#partner">パートナー制度を見る</a>
         </div>
       </div>
       <div class="facts">
@@ -265,6 +268,41 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
         </div>
         <div class="fact"><div class="v">18<small>名</small></div><p class="k">防災士を取得</p><p class="s">愛媛球団の関係者が資格を取得済み</p></div>
         <div class="fact"><div class="v">12<small>回</small></div><p class="k">年間の防災イベント</p><p class="s">学校・自治体・球場で実施</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="pillars">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">プロジェクトの3つの柱</p>
+        <h2>街に、人に、有事に。</h2>
+        <div class="rule" aria-hidden="true"></div>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <div class="pillar-head">柱 1</div>
+          <div class="pillar-body">
+            <h3>防災に強い街つくり</h3>
+            <p>消火栓看板や電柱などに<span class="hl">避難所誘導マップ</span>を設置し、住民が日常的に避難先を確認できる環境を整えます。スポーツ×防災の啓発活動で、地域の防災力を高めます。</p>
+          </div>
+        </article>
+        <article class="pillar">
+          <div class="pillar-head">柱 2</div>
+          <div class="pillar-body">
+            <h3>防災教育</h3>
+            <p>所属選手が<span class="hl">防災士や小型重機の資格</span>を取得し、地域の防災リーダーとして活躍します。</p>
+            <div class="proof"><b>実績</b>愛媛球団関係者 <span class="num">18</span> 名が防災士を取得</div>
+          </div>
+        </article>
+        <article class="pillar">
+          <div class="pillar-head">柱 3</div>
+          <div class="pillar-body">
+            <h3>災害時の選手派遣</h3>
+            <p>有事の際には<span class="hl">いち早く現地へ選手を派遣</span>し、復旧支援活動を行います。</p>
+            <div class="proof"><b>連携体制</b>四国各県の社会福祉協議会と、災害時の協力協定を締結済み</div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -326,10 +364,10 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
       <div class="net">
         <div>
           <div class="teams">
-            <div class="team"><p class="pref">愛媛</p><p class="name">愛媛マンダリンパイレーツ</p></div>
-            <div class="team"><p class="pref">香川</p><p class="name">香川オリーブガイナーズ</p></div>
-            <div class="team"><p class="pref">高知</p><p class="name">高知ファイティングドッグス</p></div>
-            <div class="team"><p class="pref">徳島</p><p class="name">徳島インディゴソックス</p></div>
+            <div class="team"><a class="team-logo" href="http://www.m-pirates.jp/" target="_blank" rel="noopener"><img src="team-ehime.png" width="292" height="468" alt="愛媛マンダリンパイレーツ 公式サイト" loading="lazy"></a><div><p class="pref">愛媛</p><p class="name">愛媛マンダリンパイレーツ</p></div></div>
+            <div class="team"><a class="team-logo" href="https://oliveguyners.com/" target="_blank" rel="noopener"><img src="team-kagawa.png" width="314" height="435" alt="香川オリーブガイナーズ 公式サイト" loading="lazy"></a><div><p class="pref">香川</p><p class="name">香川オリーブガイナーズ</p></div></div>
+            <div class="team"><a class="team-logo" href="https://kochi-fd.com/" target="_blank" rel="noopener"><img src="team-kochi.png" width="615" height="779" alt="高知ファイティングドッグス 公式サイト" loading="lazy"></a><div><p class="pref">高知</p><p class="name">高知ファイティングドッグス</p></div></div>
+            <div class="team"><a class="team-logo" href="http://www.indigo-socks.com/" target="_blank" rel="noopener"><img src="team-tokushima.png" width="365" height="434" alt="徳島インディゴソックス 公式サイト" loading="lazy"></a><div><p class="pref">徳島</p><p class="name">徳島インディゴソックス</p></div></div>
           </div>
           <div class="hub" aria-label="連携する主体">
             <span>球団</span><span>住民</span><span>企業</span><span>自治体</span><span>スポーツ</span><span>地域課題</span>
@@ -347,42 +385,8 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
     </div>
   </section>
 
-  <section class="block">
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">プロジェクトの3つの柱</p>
-        <h2>街に、人に、有事に。</h2>
-        <div class="rule" aria-hidden="true"></div>
-      </div>
-      <div class="pillars">
-        <article class="pillar">
-          <div class="pillar-head">柱 1</div>
-          <div class="pillar-body">
-            <h3>防災に強い街つくり</h3>
-            <p>消火栓看板や電柱などに<span class="hl">避難所誘導マップ</span>を設置し、住民が日常的に避難先を確認できる環境を整えます。スポーツ×防災の啓発活動で、地域の防災力を高めます。</p>
-          </div>
-        </article>
-        <article class="pillar">
-          <div class="pillar-head">柱 2</div>
-          <div class="pillar-body">
-            <h3>防災教育</h3>
-            <p>所属選手が<span class="hl">防災士や小型重機の資格</span>を取得し、地域の防災リーダーとして活躍します。</p>
-            <div class="proof"><b>実績</b>愛媛球団関係者 <span class="num">18</span> 名が防災士を取得</div>
-          </div>
-        </article>
-        <article class="pillar">
-          <div class="pillar-head">柱 3</div>
-          <div class="pillar-body">
-            <h3>災害時の選手派遣</h3>
-            <p>有事の際には<span class="hl">いち早く現地へ選手を派遣</span>し、復旧支援活動を行います。</p>
-            <div class="proof"><b>連携体制</b>四国各県の社会福祉協議会と、災害時の協力協定を締結済み</div>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
 
-  <section class="block alt" id="events">
+  <section class="block" id="events">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">防災イベント</p>
@@ -405,7 +409,7 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
     </div>
   </section>
 
-  <section class="block" id="partner">
+  <section class="block alt" id="partner">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">防災パートナー制度</p>
