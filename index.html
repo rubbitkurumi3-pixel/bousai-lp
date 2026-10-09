@@ -86,10 +86,6 @@ a { color: inherit; }
 .fact-link { color: inherit; text-decoration: none; }
 .fact-link .arrow { margin-left: 8px; color: var(--orange); }
 .fact-link:hover { color: var(--orange); text-decoration: underline; }
-.team-logos { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 12px; }
-.team-logos a { position: relative; display: block; aspect-ratio: 4 / 5; background: #fff; border: 1px solid var(--line); border-radius: 10px; min-width: 0; transition: border-color .2s, transform .2s; }
-.team-logos img { position: absolute; inset: 8px; width: calc(100% - 16px); height: calc(100% - 16px); object-fit: contain; }
-.team-logos a:hover { border-color: var(--orange); transform: translateY(-2px); }
 
 section.block { padding-block: 80px; }
 section.alt { background: var(--surface); }
@@ -229,7 +225,7 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
   .contact dd { margin-bottom: 10px; }
   section.block, .msg { padding-block: 60px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover, .team-logos a:hover, .team-logo:hover { transform: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover, .team-logo:hover { transform: none; } }
 </style>
 </head>
 <body>
@@ -259,14 +255,7 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
         </div>
       </div>
       <div class="facts">
-        <div class="fact fact-teams"><div class="v">4<small>県</small></div><p class="k"><a class="fact-link" href="https://www.iblj.co.jp/teams/" target="_blank" rel="noopener">四国全域の球団ネットワーク<span class="arrow" aria-hidden="true">→</span></a></p><p class="s">愛媛・香川・高知・徳島の4球団で連携</p>
-          <div class="team-logos">
-            <a href="http://www.indigo-socks.com/" target="_blank" rel="noopener"><img src="team-tokushima.png" width="365" height="434" alt="徳島インディゴソックス 公式サイト"></a>
-            <a href="https://oliveguyners.com/" target="_blank" rel="noopener"><img src="team-kagawa.png" width="314" height="435" alt="香川オリーブガイナーズ 公式サイト"></a>
-            <a href="http://www.m-pirates.jp/" target="_blank" rel="noopener"><img src="team-ehime.png" width="292" height="468" alt="愛媛マンダリンパイレーツ 公式サイト"></a>
-            <a href="https://kochi-fd.com/" target="_blank" rel="noopener"><img src="team-kochi.png" width="615" height="779" alt="高知ファイティングドッグス 公式サイト"></a>
-          </div>
-        </div>
+        <div class="fact fact-teams"><div class="v">4<small>県</small></div><p class="k"><a class="fact-link" href="https://www.iblj.co.jp/teams/" target="_blank" rel="noopener">四国全域の球団ネットワーク<span class="arrow" aria-hidden="true">→</span></a></p><p class="s">愛媛・香川・高知・徳島の4球団で連携</p></div>
         <div class="fact"><div class="v">18<small>名</small></div><p class="k">防災士を取得</p><p class="s">愛媛球団の関係者が資格を取得済み</p></div>
         <div class="fact"><div class="v">12<small>回</small></div><p class="k">年間の防災イベント</p><p class="s">学校・自治体・球場で実施</p></div>
       </div>
