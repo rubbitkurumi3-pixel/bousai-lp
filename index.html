@@ -71,7 +71,14 @@ a { color: inherit; }
 
 /* Hero */
 .hero { padding-block: 64px 72px; }
-.hero-grid { display: grid; gap: 48px; }
+.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+.hero-pillars { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; min-width: 0; }
+.hero-pillars a { display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; color: inherit; text-decoration: none; transition: border-color .2s, transform .2s; }
+.hero-pillars a:hover { border-color: var(--orange); transform: translateY(-2px); }
+.hero-pillars .n { font: 800 48px/1 var(--f-display); color: var(--blue); min-width: 1.2em; text-align: center; }
+.hero-pillars li:last-child .n { color: var(--orange); }
+.hero-pillars b { display: block; font-size: 18px; }
+.hero-pillars small { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); line-height: 1.6; }
 .hero-logo { line-height: 0; }
 .hero-logo img { display: block; width: min(100%, 540px); height: auto; }
 .hero .catch { margin-top: 22px; font: 800 clamp(20px, 2.6vw, 26px)/1.5 var(--f-display); }
@@ -80,7 +87,6 @@ a { color: inherit; }
 
 section.block { padding-block: 80px; }
 section.alt { background: var(--surface); }
-#pillars { padding-top: 16px; }
 .head { max-width: 44em; margin-bottom: 44px; }
 .head h2 { font-size: clamp(28px, 4vw, 40px); color: var(--blue); }
 .head p { margin-top: 18px; color: var(--muted); }
@@ -217,7 +223,7 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
   .contact dd { margin-bottom: 10px; }
   section.block, .msg { padding-block: 60px; }
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover, .team-logo:hover { transform: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn:hover, .team-logo:hover, .hero-pillars a:hover { transform: none; } }
 </style>
 </head>
 <body>
@@ -246,41 +252,11 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
           <a class="btn btn-main" href="#partner">パートナー制度を見る</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="block" id="pillars">
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">プロジェクトの3つの柱</p>
-        <h2>街に、人に、有事に。</h2>
-        <div class="rule" aria-hidden="true"></div>
-      </div>
-      <div class="pillars">
-        <article class="pillar">
-          <div class="pillar-head">柱 1</div>
-          <div class="pillar-body">
-            <h3>防災に強い街つくり</h3>
-            <p>消火栓看板や電柱などに<span class="hl">避難所誘導マップ</span>を設置し、住民が日常的に避難先を確認できる環境を整えます。スポーツ×防災の啓発活動で、地域の防災力を高めます。</p>
-          </div>
-        </article>
-        <article class="pillar">
-          <div class="pillar-head">柱 2</div>
-          <div class="pillar-body">
-            <h3>防災教育</h3>
-            <p>所属選手が<span class="hl">防災士や小型重機の資格</span>を取得し、地域の防災リーダーとして活躍します。</p>
-            <div class="proof"><b>実績</b>愛媛球団関係者 <span class="num">18</span> 名が防災士を取得</div>
-          </div>
-        </article>
-        <article class="pillar">
-          <div class="pillar-head">柱 3</div>
-          <div class="pillar-body">
-            <h3>災害時の選手派遣</h3>
-            <p>有事の際には<span class="hl">いち早く現地へ選手を派遣</span>し、復旧支援活動を行います。</p>
-            <div class="proof"><b>連携体制</b>四国各県の社会福祉協議会と、災害時の協力協定を締結済み</div>
-          </div>
-        </article>
-      </div>
+      <ol class="hero-pillars" aria-label="プロジェクトの3つの柱">
+        <li><a href="#pillars"><span class="n">1</span><span><b>防災に強い街つくり</b><small>消火栓看板などに避難所誘導マップを設置</small></span></a></li>
+        <li><a href="#pillars"><span class="n">2</span><span><b>防災教育</b><small>選手が防災士・小型重機の資格を取得</small></span></a></li>
+        <li><a href="#pillars"><span class="n">3</span><span><b>災害時の選手派遣</b><small>有事にいち早く現地へ選手を派遣</small></span></a></li>
+      </ol>
     </div>
   </section>
 
@@ -330,7 +306,65 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
     </div>
   </section>
 
-  <section class="block alt">
+  <section class="block alt" id="pillars">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">プロジェクトの3つの柱</p>
+        <h2>街に、人に、有事に。</h2>
+        <div class="rule" aria-hidden="true"></div>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <div class="pillar-head">柱 1</div>
+          <div class="pillar-body">
+            <h3>防災に強い街つくり</h3>
+            <p>消火栓看板や電柱などに<span class="hl">避難所誘導マップ</span>を設置し、住民が日常的に避難先を確認できる環境を整えます。スポーツ×防災の啓発活動で、地域の防災力を高めます。</p>
+          </div>
+        </article>
+        <article class="pillar">
+          <div class="pillar-head">柱 2</div>
+          <div class="pillar-body">
+            <h3>防災教育</h3>
+            <p>所属選手が<span class="hl">防災士や小型重機の資格</span>を取得し、地域の防災リーダーとして活躍します。</p>
+            <div class="proof"><b>実績</b>愛媛球団関係者 <span class="num">18</span> 名が防災士を取得</div>
+          </div>
+        </article>
+        <article class="pillar">
+          <div class="pillar-head">柱 3</div>
+          <div class="pillar-body">
+            <h3>災害時の選手派遣</h3>
+            <p>有事の際には<span class="hl">いち早く現地へ選手を派遣</span>し、復旧支援活動を行います。</p>
+            <div class="proof"><b>連携体制</b>四国各県の社会福祉協議会と、災害時の協力協定を締結済み</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="events">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">防災イベント</p>
+        <h2>知る、備える、逃げる、<br>助ける、支える。</h2>
+        <div class="rule" aria-hidden="true"></div>
+        <p>学校・自治体・球場で、選手と一緒に体を動かしながら学ぶ防災イベントを開催します。5つの力を順に身につけられるよう、プログラムを組み合わせて実施します。</p>
+      </div>
+      <ol class="five">
+        <li><div class="c">知る</div><p>地域のリスクや災害の基礎知識を学ぶ</p></li>
+        <li><div class="c">備える</div><p>日頃からの備えや工夫を身につける</p></li>
+        <li><div class="c">逃げる</div><p>とっさの場面で状況を見極める力を養う</p></li>
+        <li><div class="c">助ける</div><p>自分や周りの人を助ける力を身につける</p></li>
+        <li><div class="c">支える</div><p>地域で支え合い、災害後の暮らしを支える</p></li>
+      </ol>
+      <div class="progs">
+        <div class="prog"><div class="prog-head"><h3>座学プログラム</h3><p>所要時間：50分</p></div><ul><li>危険地帯の学習</li><li>防災工作</li><li>防災クイズ</li></ul><p class="etc">など</p></div>
+        <div class="prog"><div class="prog-head"><h3>体力向上プログラム</h3><p>所要時間：50分</p></div><ul><li>防災障害物競争</li><li>水消火器体験</li><li>手繰り寄せ競争</li></ul><p class="etc">など</p></div>
+        <div class="prog"><div class="prog-head"><h3>郊外学習プログラム</h3><p>所要時間：110分</p></div><ul><li>避難所までの歩行</li><li>防災看板探し</li></ul><p class="etc">など</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="strength">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">独自の強み</p>
@@ -362,31 +396,7 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
     </div>
   </section>
 
-
-  <section class="block" id="events">
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">防災イベント</p>
-        <h2>知る、備える、逃げる、<br>助ける、支える。</h2>
-        <div class="rule" aria-hidden="true"></div>
-        <p>学校・自治体・球場で、選手と一緒に体を動かしながら学ぶ防災イベントを開催します。5つの力を順に身につけられるよう、プログラムを組み合わせて実施します。</p>
-      </div>
-      <ol class="five">
-        <li><div class="c">知る</div><p>地域のリスクや災害の基礎知識を学ぶ</p></li>
-        <li><div class="c">備える</div><p>日頃からの備えや工夫を身につける</p></li>
-        <li><div class="c">逃げる</div><p>とっさの場面で状況を見極める力を養う</p></li>
-        <li><div class="c">助ける</div><p>自分や周りの人を助ける力を身につける</p></li>
-        <li><div class="c">支える</div><p>地域で支え合い、災害後の暮らしを支える</p></li>
-      </ol>
-      <div class="progs">
-        <div class="prog"><div class="prog-head"><h3>座学プログラム</h3><p>所要時間：50分</p></div><ul><li>危険地帯の学習</li><li>防災工作</li><li>防災クイズ</li></ul><p class="etc">など</p></div>
-        <div class="prog"><div class="prog-head"><h3>体力向上プログラム</h3><p>所要時間：50分</p></div><ul><li>防災障害物競争</li><li>水消火器体験</li><li>手繰り寄せ競争</li></ul><p class="etc">など</p></div>
-        <div class="prog"><div class="prog-head"><h3>郊外学習プログラム</h3><p>所要時間：110分</p></div><ul><li>避難所までの歩行</li><li>防災看板探し</li></ul><p class="etc">など</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="block alt" id="partner">
+  <section class="block" id="partner">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">防災パートナー制度</p>
