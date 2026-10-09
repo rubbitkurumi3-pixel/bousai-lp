@@ -71,24 +71,16 @@ a { color: inherit; }
 
 /* Hero */
 .hero { padding-block: 64px 72px; }
-.hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: center; }
+.hero-grid { display: grid; gap: 48px; }
 .hero-logo { line-height: 0; }
 .hero-logo img { display: block; width: min(100%, 540px); height: auto; }
 .hero .catch { margin-top: 22px; font: 800 clamp(20px, 2.6vw, 26px)/1.5 var(--f-display); }
 .hero .lead { margin-top: 16px; color: var(--muted); max-width: 34em; }
 .hero-cta { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px; }
-.facts { display: grid; gap: 14px; min-width: 0; }
-.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; display: grid; grid-template-columns: auto 1fr; gap: 4px 18px; align-items: center; }
-.fact .v { grid-row: span 2; font: 800 44px/1 var(--f-display); color: var(--blue); min-width: 2.4em; text-align: center; }
-.fact .v small { font-size: 16px; margin-left: 2px; }
-.fact .k { font-weight: 700; }
-.fact .s { font-size: 13px; color: var(--muted); line-height: 1.6; }
-.fact-link { color: inherit; text-decoration: none; }
-.fact-link .arrow { margin-left: 8px; color: var(--orange); }
-.fact-link:hover { color: var(--orange); text-decoration: underline; }
 
 section.block { padding-block: 80px; }
 section.alt { background: var(--surface); }
+#pillars { padding-top: 16px; }
 .head { max-width: 44em; margin-bottom: 44px; }
 .head h2 { font-size: clamp(28px, 4vw, 40px); color: var(--blue); }
 .head p { margin-top: 18px; color: var(--muted); }
@@ -253,11 +245,6 @@ footer { padding-block: 28px; font-size: 13px; color: var(--muted); text-align: 
           <a class="btn" href="#about">プロジェクトを知る</a>
           <a class="btn btn-main" href="#partner">パートナー制度を見る</a>
         </div>
-      </div>
-      <div class="facts">
-        <div class="fact fact-teams"><div class="v">4<small>県</small></div><p class="k"><a class="fact-link" href="https://www.iblj.co.jp/teams/" target="_blank" rel="noopener">四国全域の球団ネットワーク<span class="arrow" aria-hidden="true">→</span></a></p><p class="s">愛媛・香川・高知・徳島の4球団で連携</p></div>
-        <div class="fact"><div class="v">18<small>名</small></div><p class="k">防災士を取得</p><p class="s">愛媛球団の関係者が資格を取得済み</p></div>
-        <div class="fact"><div class="v">12<small>回</small></div><p class="k">年間の防災イベント</p><p class="s">学校・自治体・球場で実施</p></div>
       </div>
     </div>
   </section>
